@@ -92,4 +92,3 @@ CREATE TABLE pret_bancaire (
 
 - **GET** `/backend-php/pret.php` : liste des prêts
 - **POST** `/backend-php/pret.php` : ajout d’un prêt
-- **PUT** `/backend-
