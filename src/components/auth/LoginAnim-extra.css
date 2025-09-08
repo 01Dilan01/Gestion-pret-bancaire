@@ -1,0 +1,109 @@
+/* ----------- Effet dynamique sur le titre "Connexion" ----------- */
+.login-form-title-effect {
+  color: #4f46e5;
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-align: center;
+  background: linear-gradient(90deg, #4f46e5 30%, #60a5fa 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-emphasis-color: transparent;
+  animation: gradientTitleFade 1.3s cubic-bezier(.4,0,.2,1);
+}
+@keyframes gradientTitleFade {
+  from {
+    opacity: 0;
+    letter-spacing: 0.2em;
+    filter: blur(3px);
+    transform: translateY(-30px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 1px;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ----------- Effet dynamique sur les boutons ----------- */
+.btn-animated {
+  transition: box-shadow 0.2s, transform 0.18s, background 0.2s;
+}
+.btn-animated:hover {
+  box-shadow: 0 0 0 2px #6366f1, 0 6px 18px rgba(91, 114, 255, 0.14);
+  transform: translateY(-2px) scale(1.03);
+  background: linear-gradient(90deg, #4f46e5 40%, #60a5fa 100%);
+  color: #fff !important;
+}
+
+/* Glassmorphism sur la carte */
+.login-glass {
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 8px 32px 0 #6366f155;
+  backdrop-filter: blur(8px);
+  border-radius: 1.25rem;
+  border: 1.5px solid #e0e7ef55;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+/* Glow sur le bouton principal */
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.btn-animated:hover {
+  box-shadow: 0 0 16px 0 #6366f1cc, 0 2px 8px #6366f155;
+  transform: scale(1.03);
+}
+.btn-animated:active {
+  transform: scale(0.97);
+}
+
+/* Animation shake si erreur */
+@keyframes shake {
+  0% { transform: translateX(0);}
+  20% { transform: translateX(-8px);}
+  40% { transform: translateX(8px);}
+  60% { transform: translateX(-6px);}
+  80% { transform: translateX(6px);}
+  100% { transform: translateX(0);}
+}
+.shake {
+  animation: shake 0.4s;
+}
+
+/* Focus animé sur les inputs */
+input:focus {
+  box-shadow: 0 0 0 3px #a5b4fc55;
+  border-color: #6366f1;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+
+/* Animation montée sur la carte */
+@keyframes cardUp {
+  from { opacity: 0; transform: translateY(40px) scale(0.98);}
+  to { opacity: 1; transform: translateY(0) scale(1);}
+}
+.animate-cardUp {
+  animation: cardUp 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+/* Effet de lumière animée sur le titre */
+.gradient-title {
+  background: linear-gradient(90deg, #6366f1, #06b6d4, #a21caf, #6366f1);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s linear infinite;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%;}
+  100% { background-position: 100% 50%;}
+}

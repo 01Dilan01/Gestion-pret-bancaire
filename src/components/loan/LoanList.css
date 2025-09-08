@@ -1,0 +1,80 @@
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px);}
+  100% { opacity: 1; transform: none;}
+}
+.animate-fadeInUp {
+  animation: fadeInUp .7s cubic-bezier(.39,.575,.565,1.000) both;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(-8px);}
+}
+.animate-bounce {
+  animation: bounce 1.2s infinite alternate;
+}
+
+/* Effet dynamique sur les lignes */
+tbody tr {
+  border-bottom: 1px solid #e0e7ef;
+  border-radius: 12px;
+  transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+}
+tbody tr:hover {
+  background: #f1f5ff;
+  box-shadow: 0 4px 16px 0 #dbeafe55;
+  transform: scale(1.012);
+  z-index: 2;
+}
+
+/* Effet dynamique sur les boutons */
+.edit-btn, .delete-btn {
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+.edit-btn:hover {
+  background: #e0e7ff;
+  color: #3730a3;
+  transform: scale(1.08);
+}
+.delete-btn:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+  transform: scale(1.08);
+}
+.edit-btn:active, .delete-btn:active {
+  transform: scale(0.96);
+}
+
+/* Responsive table */
+@media (max-width: 700px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead tr {
+    display: none;
+  }
+  tbody tr {
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px #e0e7ef;
+  }
+  td {
+    padding-left: 50%;
+    position: relative;
+    min-height: 40px;
+  }
+  td:before {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: #6366f1;
+    font-size: 0.95em;
+  }
+  td:nth-child(1):before { content: "Client"; }
+  td:nth-child(2):before { content: "Banque"; }
+  td:nth-child(3):before { content: "Montant"; }
+  td:nth-child(4):before { content: "Date"; }
+  td:nth-child(5):before { content: "À payer"; }
+  td:nth-child(6):before { content: "Actions"; }
+}
